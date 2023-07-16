@@ -1,0 +1,16 @@
+{
+  "name": "node-package-manager",
+  "version": "1.0.0",
+  "description": "what is npm",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ardikaas",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "validator": "^13.9.0"
+  }
+}

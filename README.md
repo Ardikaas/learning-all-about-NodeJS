@@ -16,3 +16,6 @@ Node.js is a versatile platform that can be used to build a wide range of applic
 - `Internet of Things (IoT)` : Node.js is utilized in IoT applications for its lightweight nature and event-driven architecture. It can be used to build IoT gateways, data processing nodes, and handle device-to-cloud communication.
 
 These are just a few examples of what Node.js can do. Its flexibility, performance, and vast ecosystem of modules and libraries make it a powerful tool for developing a wide range of applications.
+
+## why did i made this repo?
+I created this repository because I'm currently learning to build the backend for my future website. I want to utilize Node.js as the primary technology for developing an efficient and scalable backend. This repository will serve as my experimentation space, where I can try out concepts, techniques, and modules related to backend development using Node.js. My goal is to enhance my skills in designing and building a stable, secure, and reliable backend. With dedicated effort and learning Node.js, I aim to achieve a solid backend for my upcoming website.

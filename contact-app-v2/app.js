@@ -1,5 +1,5 @@
 const yargs = require('yargs');
-const { save } = require('./contact');
+const { save, list, detail, remove } = require('./contact');
 
 yargs.command({
   command: 'add',
@@ -29,6 +29,44 @@ yargs.command({
   handler(argv){
     save(argv.nama, argv.email, argv.noHP, argv.alamat);
   }
+}).demandCommand();
+
+yargs.command({
+  command: 'list',
+  describe: 'Menampilkan nama dan nomor hp',
+  handler(){
+    list();
+  }
 });
+
+yargs.command({
+  command: 'detail',
+  describe: 'Menampilkan detail contact berdasarkan nama',
+  builder: {
+    nama: {
+      describe: 'Nama lengkap',
+      demandOption: true,
+      type: 'string',
+    }
+  },
+  handler(argv){
+    detail(argv.nama);
+  }
+})
+
+yargs.command({
+  command: 'remove',
+  describe: 'Menghapus detail contact berdasarkan nama',
+  builder: {
+    nama: {
+      describe: 'Nama lengkap',
+      demandOption: true,
+      type: 'string',
+    }
+  },
+  handler(argv){
+    remove(argv.nama);
+  }
+})
 
 yargs.parse();

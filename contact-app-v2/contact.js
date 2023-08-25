@@ -14,6 +14,12 @@ if(!fs.existsSync(dataPath)){
   fs.writeFileSync(dataPath, '[]', 'utf-8')
 }
 
+const load = () => {
+  const file = fs.readFileSync('data/data.json', 'utf8');
+  const contacts = JSON.parse(file)
+  return contacts;
+}
+
 const save = (nama, email, nomor, alamat) => {
   const contact = { 
     "name": nama,
@@ -21,8 +27,7 @@ const save = (nama, email, nomor, alamat) => {
     "contact": nomor,
     "address": alamat
   };
-  const file = fs.readFileSync('data/data.json', 'utf8');
-  const contacts = JSON.parse(file)
+  const contacts = load();
 
   const duplikat = contacts.find((contact) => contact.name === nama);
   if (duplikat){
@@ -39,8 +44,46 @@ const save = (nama, email, nomor, alamat) => {
 
   contacts.push(contact)
   fs.writeFileSync('data/data.json', JSON.stringify(contacts, null, 2))
-  console.log(contacts)
   console.log(chalk.green.inverse.bold('thanks for your data'))
 }
 
-module.exports = { save }
+const list = () => {
+  const contacts = load();
+  console.log(chalk.cyan.inverse.bold('Daftar contact : '))
+  contacts.forEach((contact, i) => {
+    console.log(`${i + 1}. ${contact.name} - ${contact.contact}`)
+  });
+};
+
+const detail = (nama)=> {
+  const contacts = load();
+  const contact = contacts.find(
+    (contact) => contact.name.toLowerCase() === nama.toLowerCase()
+  );
+
+  if(!contact){
+    console.log(chalk.red.inverse.bold(`${nama} tidak ditemukan`))
+    return false;
+  }
+  console.log(chalk.cyan.inverse.bold(contact.name))
+  console.log(contact.contact)
+  if(contact.email){
+    console.log(contact.email)
+  }
+}
+
+const remove = (nama => {
+  const contacts = load();
+  const newContacts = contacts.filter(
+    (contact) => contact.name.toLowerCase() !== nama.toLowerCase()
+  );
+  if(contacts.length === newContacts.length){
+    console.log(chalk.red.inverse.bold(`${nama} tidak ditemukan`))
+    return false;
+  }
+
+  fs.writeFileSync('data/data.json', JSON.stringify(newContacts, null, 2))
+  console.log(chalk.green.inverse.bold(`data contact ${nama} berhasil dihapus!`))
+})
+
+module.exports = { save, list, detail, remove }

@@ -6,11 +6,6 @@
     "address": "surabaya"
   },
   {
-    "name": "dodi",
-    "email": "dodi123@gmail.com",
-    "contact": "123412"
-  },
-  {
     "name": "ahmad",
     "contact": "1235456"
   },
@@ -18,5 +13,10 @@
     "name": "alex",
     "contact": "15734534",
     "address": "jonggol"
+  },
+  {
+    "name": "dodi",
+    "email": "dodi12@gmail.com",
+    "contact": "123412"
   }
 ]

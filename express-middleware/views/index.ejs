@@ -1,0 +1,13 @@
+<h1>This is express web server</h1>
+<h2>Hi, my name is <%= nama %></h2>
+
+<h4>daftar mahasiswa</h4>
+<% if (mahasiswa.length < 1) { %>
+<p>data amahsiswa masih kososng</p>
+<% } %>
+<% mahasiswa.forEach(mhs => { %>
+  <ul>
+    <li>Nama : <%= mhs.nama %></li>
+    <li>Email : <%= mhs.email %></li>
+  </ul>
+<% }) %>

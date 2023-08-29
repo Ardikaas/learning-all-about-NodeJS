@@ -1,0 +1,32 @@
+<table>
+  <thead>
+    <tr>
+      <th>No</th>
+      <th>Nama</th>
+      <th>Email</th>
+      <th>No Handphone</th>
+      <th>Alamat</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if (contacts.length === 0) { %>
+      <div>
+        Data contact tidak ada!
+      </div>
+    <% } %>
+    <% let no = 1 %>
+    <% contacts.forEach(contact => { %>
+      <tr>
+        <th><%= no++ %></th>
+        <td><%= contact.nama %></td>
+        <td><%= contact.email %></td>
+        <td class="tb-center"><%= contact.nohp %></td>
+        <td class="tb-center"><%= contact.alamat %></td>
+        <td class="tb-center tb-btn">
+          <a href="/contact/<%= contact.nama %>">detail</a>
+        </td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>

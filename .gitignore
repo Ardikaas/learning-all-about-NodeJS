@@ -5,3 +5,5 @@
 /express-web-server/node_modules
 
 /express-middleware/node_modules
+
+/express-contact-app/node_modules

@@ -1,13 +1,14 @@
 const express = require('express')
 const expressLayouts =require('express-ejs-layouts')
-const { load, detail } = require('./utils/contact')
+const { load, detail, add } = require('./utils/contact')
 
 const app = express()
 const port = 3000
 
 app.set('view engine', 'ejs');
 app.use(expressLayouts);
-app.use(express.static('public'));
+app.use(express.static(__dirname + '/public'));
+app.use(express.urlencoded());
 
 app.get('/', (req, res) => {
   const mahasiswa = [
@@ -45,6 +46,18 @@ app.get('/contact', (req, res) => {
     title: 'Express web server | Contact',
     contacts: contacts,
   })
+})
+
+app.get('/contact/add', (req, res) => {
+  res.render('add-contact', {
+    layout: 'component/main-layout',
+    title: 'Express web server | Add Contact',
+  });
+})
+
+app.post('/contact', (req, res) => {
+  add(req.body);
+  res.redirect('/contact')
 })
 
 app.get('/contact/:nama', (req, res) => {

@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+html{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 0.400;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body{
+  margin: 0;
+}
+
+.navbar{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px;
+  gap: 20px;
+  background-color: black;
+}
+
+.navbar h3{
+  margin: 0;
+  padding-left: 20px;
+  padding-right: 15px;
+  color: white;
+}
+
+.navbar a{
+  text-decoration: none;
+  opacity: 75%;
+  color: white;
+  transition: 0.1s;
+}
+
+.navbar a:hover{
+  opacity: 100%;
+}
+
+.col{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.col img{
+  width: 540;
+  height: 540;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.col h1{
+  margin: 0;
+  padding: 5px;
+}
+
+.col p{
+  margin: 0;
+  padding-bottom: 10px;
+}
+
+table, th, td{
+  border: 1px solid;
+}
+
+th, td{
+  padding: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+table{
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tb-center{
+  text-align: center;
+}
+
+.tb-btn a{
+  background-color: rgb(58, 58, 212);
+  opacity: 100%;
+  text-decoration: none;
+  color: white;
+  padding: 5px;
+  padding-right: 20px;
+  padding-left: 20px;
+  border-radius: 30px;
+  transition: .3s;
+}
+
+.tb-btn a:hover{
+  opacity: 80%;
+}
+
+.card{
+  margin: 20px;
+  padding: 20px;
+  border-radius: 30px;
+  background: #ffffff;
+  box-shadow:  20px 20px 60px #d9d9d9,
+  -20px -20px 60px #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+}
+
+.contact{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+}
+
+.card h4{
+  margin: 0;
+}
+
+.card h6{
+  margin: 0;
+}
+
+.card a{
+  background-color: rgb(58, 58, 212);
+  opacity: 100%;
+  text-decoration: none;
+  color: white;
+  padding: 5px;
+  padding-right: 20px;
+  padding-left: 20px;
+  border-radius: 30px;
+  transition: .3s;
+}
+
+.card a:hover{
+  opacity: 80%;
+}
+
+.con-container h2{
+  padding: 10px;
+}
+
+.tb-center{
+  text-align: center;
+}
+
+.tb-btn a{
+  background-color: rgb(58, 58, 212);
+  opacity: 100%;
+  text-decoration: none;
+  color: white;
+  padding: 5px;
+  padding-right: 20px;
+  padding-left: 20px;
+  border-radius: 30px;
+  transition: .3s;
+}
+
+.tb-btn a:hover{
+  opacity: 80%;
+}
+
+.add-btn{
+  margin-right: 50px;
+}
+
+.add-btn a{
+  background-color: rgb(58, 58, 212);
+  opacity: 100%;
+  text-decoration: none;
+  color: white;
+  padding: 5px;
+  padding-right: 20px;
+  padding-left: 20px;
+  border-radius: 30px;
+  transition: .3s;
+}
+
+.add-btn a:hover{
+  opacity: 80%;
+}
+
+.table{
+  padding: 10px;
+  padding-top: 20px;
+}
+
+.form-container{
+  display: flex;
+  flex-direction: column;
+  margin-right: 50px;
+  margin-left: 50px;
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+}
+
+.input{
+  padding-top: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form input{
+  padding: 10px;
+  width: 280px;
+}
+
+.form button{
+  padding: 10px;
+  width: 100px;
+  margin-top: 25px;
+  background-color: rgb(58, 58, 212);
+  opacity: 100%;
+  color: white;
+  padding-right: 20px;
+  padding-left: 20px;
+  border-radius: 30px;
+  transition: .3s;
+}
+
+.form button:hover{
+  opacity: 80%;
+}

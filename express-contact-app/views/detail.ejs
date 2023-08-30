@@ -5,13 +5,16 @@
     <a href="/contact">&laquo; kembali ke daftar contact</a>
   </div>
 <% }else { %>
-<div class="card">
-  <h5><%= contact.nama %></h5>
   <div>
-    <h6><%= contact.email %></h6>
-    <h6><%= contact.nohp %></h6>
+    <div class="card">
+      <h3><%= contact.nama %></h3>
+      <div class="contact">
+        <h6><%= contact.email %></h6>
+        <h6>|</h6>
+        <h6><%= contact.nohp %></h6>
+      </div>
+      <p><%= contact.alamat %></p>
+      <a href="/contact">&laquo; Back</a>
+    </div>
   </div>
-  <p><%= contact.alamat %></p>
-  <a href="/contact">&laquo; Back</a>
-</div>
 <% } %>

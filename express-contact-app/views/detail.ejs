@@ -1,20 +1,26 @@
-<h2>Detail Contact</h2>
-<% if (!contact) { %>
-  <div>
-    Data contact tidak ada!
-    <a href="/contact">&laquo; kembali ke daftar contact</a>
-  </div>
-<% }else { %>
-  <div>
-    <div class="card">
-      <h3><%= contact.nama %></h3>
-      <div class="contact">
-        <h6><%= contact.email %></h6>
-        <h6>|</h6>
-        <h6><%= contact.nohp %></h6>
-      </div>
-      <p><%= contact.alamat %></p>
-      <a href="/contact">&laquo; Back</a>
+<div class="detail-container">
+  <h2>Detail Contact</h2>
+  <% if (!contact) { %>
+    <div>
+      Data contact tidak ada!
+      <a href="/contact">&laquo; kembali ke daftar contact</a>
     </div>
-  </div>
-<% } %>
+  <% }else { %>
+    <div>
+      <div class="card">
+        <h3><%= contact.nama %></h3>
+        <div class="contact">
+          <h6><%= contact.email %></h6>
+          <h6>|</h6>
+          <h6><%= contact.nohp %></h6>
+        </div>
+        <p><%= contact.alamat %></p>
+        <div class="btn-detail">
+          <a href="/contact/edit/<%= contact.nama %>" class="btn-ubah">Edit</a>
+          <a href="/contact/delete/<%= contact.nama %>" class="btn-hapus" onclick="return confirm('are you sure about that?')">Remove</a>
+          <a href="/contact" class="btn-back">&laquo; Back</a>
+        </div>
+      </div>
+    </div>
+  <% } %>
+</div>

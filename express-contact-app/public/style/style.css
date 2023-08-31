@@ -148,5 +148,8 @@ table{
 .success{
   background-color: rgb(130, 255, 130);
   padding: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   border-radius: 10px;
 }
+

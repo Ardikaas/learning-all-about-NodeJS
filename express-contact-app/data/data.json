@@ -1,29 +1,5 @@
 [
   {
-    "nama": "Ardikaas",
-    "email": "ardikaas@gmail.com",
-    "nohp": "081231232",
-    "alamat": "Cilegon"
-  },
-  {
-    "nama": "dodi",
-    "email": "dodi@gmail.com",
-    "nohp": "08124124",
-    "alamat": "Cilegon"
-  },
-  {
-    "nama": "Ucup",
-    "email": "ardikaas@aji",
-    "nohp": "123123",
-    "alamat": "Jonggol"
-  },
-  {
-    "nama": "Udin",
-    "email": "udinsedunia@gmail.com",
-    "nohp": "0848456345",
-    "alamat": "Puri"
-  },
-  {
     "nama": "Albert",
     "email": "albert@gmail.com",
     "nohp": "08218302283",
@@ -40,5 +16,23 @@
     "email": "suryagimank@gmail.com",
     "nohp": "082118423574",
     "alamat": "Jakarta"
+  },
+  {
+    "nama": "Ardikaas",
+    "email": "ardikaasbusiness@gmail.com",
+    "nohp": "082114506973",
+    "alamat": "Cilegon"
+  },
+  {
+    "nama": "Dodi Suparman",
+    "email": "dodicemunguts@untirta.ac.id",
+    "nohp": "08777184014",
+    "alamat": "Cilegon"
+  },
+  {
+    "nama": "Udin",
+    "email": "udinsedunia@gmail.com",
+    "nohp": "08777123753",
+    "alamat": "Puri"
   }
 ]

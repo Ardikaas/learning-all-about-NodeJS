@@ -1,8 +1,10 @@
 <div class="con-container">
   <h2>Daftar Contact</h2>
-  <div class="add-btn">
-    <a href="/contact/add">Tambah data contact</a>
-  </div>
+  <% if (msg.length !== 0) { %>
+    <div class="success" role="alert">
+      <%= msg %>
+    </div>
+  <% } %>
   <div class="table">
     <table>
       <thead>
@@ -20,22 +22,26 @@
           <div>
             Data contact tidak ada!
           </div>
-        <% } %>
-        <% let no = 1 %>
-        <% contacts.forEach(contact => { %>
-          <tr>
-            <th><%= no++ %></th>
-            <td><%= contact.nama %></td>
-            <td><%= contact.email %></td>
-            <td class="tb-center"><%= contact.nohp %></td>
-            <td class="tb-center"><%= contact.alamat %></td>
-            <td class="tb-center tb-btn">
-              <a href="/contact/<%= contact.nama %>">detail</a>
-            </td>
+          <% } %>
+          <% let no = 1 %>
+          <% contacts.forEach(contact => { %>
+            <tr>
+              <th><%= no++ %></th>
+              <td><%= contact.nama %></td>
+              <td><%= contact.email %></td>
+              <td class="tb-center"><%= contact.nohp %></td>
+              <td class="tb-center"><%= contact.alamat %></td>
+              <td class="tb-center tb-btn">
+                <a href="/contact/<%= contact.nama %>">detail</a>
+              </td>
           </tr>
-        <% }) %>
-      </tbody>
-    </table>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+    <div class="add-btn">
+      <a href="/contact/add">Tambah data contact</a>
+    </div>
   </div>
-</div>
-
+  
+  

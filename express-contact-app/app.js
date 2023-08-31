@@ -1,6 +1,10 @@
 const express = require('express')
-const expressLayouts =require('express-ejs-layouts')
-const { load, detail, add } = require('./utils/contact')
+const expressLayouts = require('express-ejs-layouts')
+const { body, validationResult, check } = require('express-validator')
+const session = require('express-session')
+const cookieParser = require('cookie-parser')
+const flash = require('connect-flash')
+const { load, detail, add, cekDuplikat } = require('./utils/contact')
 
 const app = express()
 const port = 3000
@@ -8,7 +12,17 @@ const port = 3000
 app.set('view engine', 'ejs');
 app.use(expressLayouts);
 app.use(express.static(__dirname + '/public'));
-app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser('secret'));
+app.use(
+  session({
+  cookie: { maxAge: 6000 },
+  secret: 'secret',
+  resave: true,
+  saveUninitialized: true,
+  })
+);
+app.use(flash());
 
 app.get('/', (req, res) => {
   const mahasiswa = [
@@ -45,6 +59,7 @@ app.get('/contact', (req, res) => {
     layout: 'component/main-layout',
     title: 'Express web server | Contact',
     contacts: contacts,
+    msg: req.flash('msg'),
   })
 })
 
@@ -55,9 +70,29 @@ app.get('/contact/add', (req, res) => {
   });
 })
 
-app.post('/contact', (req, res) => {
-  add(req.body);
-  res.redirect('/contact')
+app.post('/contact', [
+  body('nama').custom((value) => {
+    const duplikat = cekDuplikat(value);
+    if(duplikat) {
+      throw new Error('Nama contact sudah digunakan!');
+    }
+    return true;
+  }),
+  check('email', 'Email tidak valid!').isEmail(),
+  check('nohp', 'No Handphone tidak valid!').isMobilePhone('id-ID')
+], (req, res) => {
+  const errors = validationResult(req)
+  if (!errors.isEmpty()){
+    res.render('add-contact', {
+      layout: 'component/main-layout',
+      title: 'Express web server | Contact',
+      errors: errors.array(),
+    });
+  } else {
+    add(req.body);
+    req.flash('msg', 'Data contact berhasil ditambahkan :D')
+    res.redirect('/contact')
+  }
 })
 
 app.get('/contact/:nama', (req, res) => {
